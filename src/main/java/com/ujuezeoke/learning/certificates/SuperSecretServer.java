@@ -58,7 +58,6 @@ public class SuperSecretServer {
         contextHandler.setContextPath("");
 
         contextHandler.addServlet(new ServletHolder(new ServletContainer(resourceConfigs())), "/*");
-//        contextHandler.addFilter(new FilterHolder(new InspectTheCertificateFilter()), "/", null);
         return contextHandler;
     }
 
@@ -71,7 +70,7 @@ public class SuperSecretServer {
         final URL resource = ClassLoader.getSystemClassLoader().getResource(
                 "serverkeystore.jks");
         sslContextFactory.setKeyStorePath(resource.toExternalForm());
-        sslContextFactory.setKeyStorePassword("123456");
+        sslContextFactory.setKeyStorePassword("123456"); //Super secret, Super Secure passwords :D
         sslContextFactory.setKeyManagerPassword("1234");
         sslContextFactory.setWantClientAuth(true);
 
